@@ -28,15 +28,12 @@ for link in soup.find_all ('a'):
 			temp_list.append(detail.get_text())
 		l.append(temp_list)
 
-with open ('ufo_data.csv', 'wt') as myfile:
+with open ('ufo_data.csv', 'w', newline='') as myfile:
 	wr = csv.writer(myfile)
-	try:
-		wr.writerows(l)
-	except:
-		print ('err')
-
-#for each in l:
-	#print (each)	
-	#print (new_soup.prettify)
 	
+	for row in l:
+		try:
+			wr.writerow(row)
+		except:
+			print ('err')
 
