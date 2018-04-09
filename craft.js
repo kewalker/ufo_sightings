@@ -1,22 +1,7 @@
-var craft_dict = null;
-
-function print_craft_dict () {
-	console.log (craft_dict);
-}
-document.createElementNS("http://www.w3.org/2000/svg", "svg")
 var svg1 = d3.select("#svg1"),
     margin = {top: 20, right: 20, bottom: 30, left: 40},
     width = +svg1.attr("width") - margin.left - margin.right,
     height = +svg1.attr("height") - margin.top - margin.bottom;
-
-svg1.append("text")
-  .attr("x", (width / 2))             
-  .attr("y", 0 - (margin.top / 2))
-  .attr("text-anchor", "middle")  
-  .style("font-size", "16px") 
-  .style("text-decoration", "underline")  
-  .text("Counts of Craft Type");
-
 
 var x = d3.scaleBand().rangeRound([0, width]).padding(0.1),
     y = d3.scaleLinear().rangeRound([height, 0]);
