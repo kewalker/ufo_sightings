@@ -3,7 +3,7 @@ var craft_dict = null;
 function print_craft_dict () {
 	console.log (craft_dict);
 }
-
+document.createElementNS("http://www.w3.org/2000/svg", "svg")
 var svg1 = d3.select("#svg1"),
     margin = {top: 20, right: 20, bottom: 30, left: 40},
     width = +svg1.attr("width") - margin.left - margin.right,

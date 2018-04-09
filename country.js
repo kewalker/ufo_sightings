@@ -1,3 +1,5 @@
+document.createElementNS("http://www.w3.org/2000/svg", "svg")
+
 var svg2 = d3.select("#svg2"),
     margin = {top: 20, right: 20, bottom: 30, left: 40},
     width = +svg2.attr("width") - margin.left - margin.right,
