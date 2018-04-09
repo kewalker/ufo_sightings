@@ -7,13 +7,15 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
 </head>
+
 <body>
 
 <div class="container">
   <h2>Ufos</h2>
   <p>The truth is out there</p>
-
   <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
     <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
@@ -29,6 +31,21 @@
     <div id="menu1" class="tab-pane fade">
       <h3>Menu 1</h3>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <meta charset="utf-8">
+      <style>
+      .bar {
+        fill: steelblue;
+      }
+      .bar:hover {
+        fill: brown;
+      }
+      .axis--x path {
+        display: none;
+      }
+      </style>
+      <svg width="1200" height="500"></svg>
+      <script src="https://d3js.org/d3.v4.min.js"></script>
+      <script src="page_load.js"></script>
     </div>
     <div id="menu2" class="tab-pane fade">
       <h3>Menu 2</h3>
@@ -41,7 +58,7 @@
   </div>
 </div>
 
-<script src="scripts/page_load.js"></script>
+
 
 </body>
 </html>
