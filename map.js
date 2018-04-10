@@ -38,7 +38,7 @@ d3.json("data/world-50m.json", function(error, topology) {
 //        .style("fill", "red");
 // });
 
-g2.selectAll("path")
+g2.selectAll("#map").select("path")
       .data(topojson.object(topology, topology.objects.countries)
           .geometries)
     .enter()
