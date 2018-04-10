@@ -1,5 +1,5 @@
-var width = 960,
-    height = 500;
+var widthmap = 960,
+    heightmap = 500;
 
 var projection = d3.geoMercator()
     .center([0, 5 ])
@@ -7,8 +7,8 @@ var projection = d3.geoMercator()
     .rotate([-180,0]);
 
 var map = d3.select("#map").append("svg")
-    .attr("width", width)
-    .attr("height", height);
+    .attr("width", widthmap)
+    .attr("height", heightmap);
 
 var path = d3.geoPath()
     .projection(projection);
@@ -38,7 +38,7 @@ d3.json("data/world-50m.json", function(error, topology) {
 //        .style("fill", "red");
 // });
 
-g2.selectAll("#map").select("svg")
+g2.selectAll("path")
       .data(topojson.object(topology, topology.objects.countries)
           .geometries)
     .enter()
