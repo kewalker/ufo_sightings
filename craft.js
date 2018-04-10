@@ -6,7 +6,7 @@ var svg1 = d3.select("#svg1"),
 var x = d3.scaleBand().rangeRound([0, width]).padding(0.1),
     y = d3.scaleLinear().rangeRound([height, 0]);
 
-var g = svg1.append("g")
+var g1 = svg1.append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 d3.csv("data/craft_frequency.csv", function(d) {
@@ -18,12 +18,12 @@ d3.csv("data/craft_frequency.csv", function(d) {
   x.domain(data.map(function(d) { return d.craft_type; }));
   y.domain([0, d3.max(data, function(d) { return d.count; })]);
 
-  g.append("g")
+  g1.append("g")
       .attr("class", "axis axis--x")
       .attr("transform", "translate(0," + height + ")")
       .call(d3.axisBottom(x));
 
-  g.append("g")
+  g1.append("g")
       .attr("class", "axis axis--y")
       .call(d3.axisLeft(y).ticks(10))
     .append("text")
@@ -33,7 +33,7 @@ d3.csv("data/craft_frequency.csv", function(d) {
       .attr("text-anchor", "end")
       .text("Frequency");
 
-  g.selectAll(".bar")
+  g1.selectAll(".bar")
     .data(data)
     .enter().append("rect")
       .attr("class", "bar")
