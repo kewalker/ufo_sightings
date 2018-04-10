@@ -1,7 +1,7 @@
 var width = 960,
     height = 500;
 
-var projection = d3.geo.mercator()
+var projection = d3.geoMercator()
     .center([0, 5 ])
     .scale(200)
     .rotate([-180,0]);
@@ -10,7 +10,7 @@ var map = d3.select("#map").append("svg")
     .attr("width", width)
     .attr("height", height);
 
-var path = d3.geo.path()
+var path = d3.geoPath()
     .projection(projection);
 
 var g2 = map.append("g");
@@ -47,7 +47,7 @@ g2.selectAll("path")
 });
 
 // zoom and pan
-var zoom = d3.behavior.zoom()
+var zoom = d3.zoom()
     .on("zoom",function() {
         // g2.attr("transform","translate("+ 
         //     d3.event.translate.join(",")+")scale("+d3.event.scale+")");
@@ -55,9 +55,7 @@ var zoom = d3.behavior.zoom()
         //     .attr("d", path.projection(projection));
         // g2.selectAll("path")  
         //     .attr("d", path.projection(projection)); 
-        g2.attr("transform",
-          "translate("+d3.event.translate+")"
-          + " scale("+d3.event.scale+")");
+        g2.attr("transform", d3.event.transform)
 
   });
 
