@@ -37,8 +37,8 @@ d3.csv("data/craft_frequency.csv", function(d) {
     .data(data)
     .enter().append("rect")
       .attr("class", "bar")
-      .attr("x", function(d) { return x1(d.craft_type); })
-      .attr("y", function(d) { return y1(d.count); })
+      .attr("x1", function(d) { return x1(d.craft_type); })
+      .attr("y1", function(d) { return y1(d.count); })
       .attr("width", x1.bandwidth())
       .attr("height", function(d) { return height - y1(d.count); });
 });
