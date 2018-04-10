@@ -6,11 +6,12 @@ var projection = d3.geoMercator()
     .scale(200)
     .rotate([-180,0]);
 
-var map = d3.select("#map").appendHTML("svg")
+var map = d3.select("#map").append("svg")
     .attr("width", widthmap)
     .attr("height", heightmap);
 
 // d3.select('.container').appendHTML('<div><svg><g><rect width="50" height="50" /></g></svg></div>');
+
 
 var path = d3.geoPath()
     .projection(projection);
