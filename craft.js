@@ -15,8 +15,8 @@ d3.csv("data/craft_frequency.csv", function(d) {
 }, function(error, data) {
   if (error) throw error;
 
-  x.domain(data.map(function(d) { return d.craft_type; }));
-  y.domain([0, d3.max(data, function(d) { return d.count; })]);
+  x1.domain(data.map(function(d) { return d.craft_type; }));
+  y1.domain([0, d3.max(data, function(d) { return d.count; })]);
 
   g1.append("g")
       .attr("class", "axis axis--x")
