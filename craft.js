@@ -3,8 +3,8 @@ var svg1 = d3.select("#svg1"),
     width = +svg1.attr("width") - margin.left - margin.right,
     height = +svg1.attr("height") - margin.top - margin.bottom;
 
-var x = d3.scaleBand().rangeRound([0, width]).padding(0.1),
-    y = d3.scaleLinear().rangeRound([height, 0]);
+var x1 = d3.scaleBand().rangeRound([0, width]).padding(0.1),
+    y2 = d3.scaleLinear().rangeRound([height, 0]);
 
 var g1 = svg1.append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
