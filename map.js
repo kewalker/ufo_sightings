@@ -10,9 +10,6 @@ var map = d3.select("#map").append("svg")
     .attr("width", widthmap)
     .attr("height", heightmap);
 
-// d3.select('.container').appendHTML('<div><svg><g><rect width="50" height="50" /></g></svg></div>');
-
-
 var path = d3.geoPath()
     .projection(projection);
 
@@ -37,7 +34,7 @@ d3.csv("data/map_subset.csv", function(error, data) {
        .attr("cy", function(d) {
                return projection([d.longitude, d.latitude])[1];
        })
-       .attr("r", 5)
+       .attr("r", 2)
        .style("fill", "red");
 });
 
